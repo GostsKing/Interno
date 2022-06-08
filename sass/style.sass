@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;500&display=swap');
+.header
+    padding: 0 40px
+    position: relative
 
 .container
     max-width: 1200px
@@ -6,21 +9,30 @@
 
 // Стилизация header START
 .header__container
+    position: relative
     padding: 26px 0 18px 0
     display: flex
     justify-content: space-between
+    z-index: 200
 
 .logo
     max-width: 177px
+    img
+        width: 100%
 
-.nav__list
+.nav
+    position: relative
+
+.list
     height: 100%
     display: flex
     align-items: center
-.nav__item
+
+.item
     margin-right: 40px
     &:last-child
         margin-right: 0
+
 .item-link
     font-family: 'Jost', sans-serif
     font-style: normal
@@ -32,3 +44,86 @@
     &:hover
         color: #CDA274
 // Стилизация header END
+
+// Стилизация banner START
+.banner
+    background: url('../img/bg.png')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    border-radius: 0 0 0 290px
+    padding: 195px 0 250px
+
+    .textBx
+        max-width: 600px
+        // margin: 195px 0 250px
+        h1
+            font-family: 'DM Serif Display', sans-serif
+            font-weight: 400
+            font-size: 80px
+            line-height: 96px
+            letter-spacing: 0.22px
+            color: #292F36
+            margin-bottom: 20px
+        p
+            font-family: 'Jost'
+            font-weight: 400
+            font-size: 22px
+            line-height: 33px
+            letter-spacing: 0.22px
+            color: #4D5053
+            
+        .btn
+            font-family: 'Jost'
+            font-weight: 400
+            font-size: 18px
+            line-height: 27px
+            letter-spacing: 0.72px
+            color: #FFFFFF                                   
+            display: inline-flex
+            align-items: center
+            margin-top: 35px
+            padding: 18px 25px
+            background: #292F36
+            color: #fff
+            border-radius: 18px
+            span
+                margin-right: 20px
+
+
+// Стилизация banner END
+
+
+// Адаптивная верстка.
+@media (max-width: 901px)
+    .toggle
+        display: block
+        width: 40px
+        height: 40px
+        background: url(../img/icons/menu.png)
+        background-repeat: no-repeat
+        background-position: center
+        background-size: 35px
+    .toggle.activ
+        background: url(../img/icons/close.png)
+        ackground-repeat: no-repeat
+        background-position: center
+        background-size: 35px
+    .nav
+        position: fixed
+        left: -100%
+        top: 95px
+        display: block
+        background: #fff
+        width: 100%
+        z-index: 100
+        transition: .3s
+        &.activ
+            left: 0
+        .list
+            width: 100%
+            justify-content: center
+            flex-direction: column
+            .item
+                margin: 0
+
