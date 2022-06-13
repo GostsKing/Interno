@@ -1,4 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;500&display=swap');
+@mixin text
+    font:
+        family: 'Jost', sans-serif
+        style: normal
+        weight: 400
+        size: 22px
+    line-height: 33px
+    letter-spacing: 0.22px
+    color: #4D5053
+
+@mixin title
+    font:
+        family: 'DM Serif Display', sans-serif
+        style: normal
+        weight: 400
+        size: 50px
+    line-height: 65px
+    letter-spacing: 0.22px
+    color: #292F36
+
+.section-title
+    text-align: center
+    margin-bottom: 70px
+    h1
+        @include title
+        margin-bottom: 20px
+    span
+        display: block
+        @include text
+        max-width: 768px
+
+
+.btn
+    font-family: 'Jost'
+    font-weight: 400
+    font-size: 18px
+    line-height: 27px
+    letter-spacing: 0.72px
+    color: #FFFFFF                                   
+    display: inline-flex
+    align-items: center
+    margin-top: 35px
+    padding: 18px 25px
+    background: #292F36
+    color: #fff
+    border-radius: 18px
+    span
+        margin-right: 20px
+
 .header
     padding: 0 40px
     position: relative
@@ -52,7 +101,7 @@
     background-position: center
     background-size: cover
     border-radius: 0 0 0 290px
-    padding: 195px 0 250px
+    padding: 195px 40px 250px
 
     .textBx
         max-width: 600px
@@ -66,32 +115,365 @@
             color: #292F36
             margin-bottom: 20px
         p
-            font-family: 'Jost'
-            font-weight: 400
-            font-size: 22px
-            line-height: 33px
-            letter-spacing: 0.22px
-            color: #4D5053
+            @include text
             
-        .btn
-            font-family: 'Jost'
-            font-weight: 400
-            font-size: 18px
-            line-height: 27px
-            letter-spacing: 0.72px
-            color: #FFFFFF                                   
-            display: inline-flex
-            align-items: center
-            margin-top: 35px
-            padding: 18px 25px
-            background: #292F36
-            color: #fff
-            border-radius: 18px
-            span
-                margin-right: 20px
+        
 
 
 // Стилизация banner END
+
+// Стилизация about START
+.about
+    padding: 100px 40px 100px
+    .container
+        display: flex
+        .about__section
+            padding: 0 52px
+            display: flex
+            flex-direction: column
+            .about__title
+                font-family: 'DM Serif Display'
+                font-weight: 400
+                font-size: 25px
+                line-height: 39px
+                text-align: center
+                letter-spacing: 0.22px
+                color: #292F36
+                margin-bottom: 17px
+            .about__text
+                @include text
+                text-align: center
+            .btn_more
+                display: block
+                margin-top: 30px
+                font-family: 'Jost'
+                font-weight: 400
+                font-size: 18px
+                line-height: 27px
+                text-align: center
+                letter-spacing: 0.36px
+                color: #4D5053
+                &:hover
+                    color: #CDA274
+// Стилизация about END
+
+// Стилизация feature START
+.feature
+    padding: 0 40px 100px 40px
+.feature__section
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .textBx
+        max-width: 582px
+        h1
+            @include title
+        p
+            max-width: 530px
+            @include text
+            margin-top: 40px
+            margin-bottom: 30px
+        .call
+            display: flex
+            align-items: center
+            .call-icon
+                width: 93px
+                height: 93px
+                background: #F4F0EC
+                border-radius: 50%
+                display: flex
+                align-items: center
+                justify-content: center
+                img
+                    width: 32px
+                    height: 32px
+            span
+                margin-left: 20px
+                @include text
+    .imgBx
+        width: 582px
+        height: 635px
+        background: url("../img/blog-img_1.png")
+        background-repeat: no-repeat
+        background-size: cover
+        border-radius: 0px 326px 0px 123px
+
+// Стилизация feature END
+
+// Стилизация recall START
+.recall
+    margin-bottom: 120px
+    .contentBx
+        background: #F4F0EC
+        border-radius: 70px
+        padding: 115px 50px
+        h1
+            @include title
+            text-align: center
+            margin-bottom: 45px
+        .recall__cards
+            display: flex
+            justify-content: space-between
+            .card
+                padding: 45px 40px
+                background: #fff
+                max-width: 354px
+                border-radius: 30px
+                .recall__user
+                    display: flex
+                    align-items: center
+                    margin-bottom: 25px
+                    img
+                        border-radius: 50%
+                        margin-right: 20px
+                    .user__name
+                        font-family: 'DM Serif Display'
+                        font-weight: 400
+                        font-size: 25px
+                        line-height: 38px
+                        letter-spacing: 0.22px
+                        color: #292F36
+                    .user__from
+                        font-family: 'Jost'
+                        font-weight: 400
+                        font-size: 18px
+                        line-height: 27px
+                        letter-spacing: 0.22px
+                        color: #4D5053
+                .recall__text
+                    @include text
+                    font-size: 20px
+// Стилизация recall END
+
+// Стилизация brands START
+.brands
+    padding: 0 40px 100px 40px
+    .contantBx
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-wrap: wrap
+        img
+            margin: 15px
+// Стилизация brands END
+
+// Стилизация project START
+.project
+    padding: 0 40px 70px 40px
+    .contentBx
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        .project__item
+            margin-bottom: 60px
+        .project__card
+            width: 100%
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            .project__item
+                max-width: 47%
+                img.project__foto
+                    width: 100%
+                    border-radius: 0 80px 0 0
+            .more-info
+                display: flex
+                justify-content: space-between
+                margin-top: 24px
+                .more-info__title h4
+                    font-family: 'DM Serif Display'
+                    font-weight: 400
+                    font-size: 24px
+                    line-height: 38px
+                    letter-spacing: 0.22px
+                    color: #292F36
+                .more-info__title span
+                    @include text
+                .more-info__btn
+                    background: #F4F0EC
+                    background-image: url("../img/icons/more.svg")
+                    background-repeat: no-repeat
+                    background-position: center
+                    border-radius: 50%
+                    height: 70px
+                    width: 70px
+// Стилизация project END
+
+// Стилизация count-project START
+.count-project
+    background: #F4F0EC
+    padding: 140px 40px
+    .contantBx
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        width: 100%
+        .textBx
+            text-align: center
+            border-right: 1px solid #CDA274
+            padding-left: 20px
+            padding-right: 20px
+            width: 25%
+            &:last-child
+                border-right: none
+            h1
+                font-family: 'DM Serif Display'
+                font-weight: 400
+                font-size: 85px
+                line-height: 128px
+                text-align: center
+                letter-spacing: 1.7px
+                color: #CDA274
+            span
+                @include text
+// Стилизация count-project END
+
+// Стилизация blogs START
+.blogs
+    padding: 100px 40px 0 40px
+    .contantBx
+        display: flex
+        flex-direction: column
+        align-items: center
+        .cards
+.cards
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    .card__item
+        width: 32%
+        padding: 21px 21px 40px 21px
+        border: 1px solid #E7E7E7
+        border-radius: 62px
+        margin-bottom: 42px
+        .card__img
+            width: 100%
+            position: relative
+            border-radius: 45px 45px 0 0
+            overflow: hidden
+            img
+                width: 100%
+            span
+                font:
+                    family: 'Jost', sans-serif
+                    weight: 400
+                    size: 16px
+                line-height: 24px
+                letter-spacing: 0.22px
+                color: #4D5053
+                position: absolute
+                left: 25px
+                bottom: 25px
+                padding: 10px
+                background: #fff
+                border-radius: 8px
+        .card__title
+            font:
+                family: 'DM Serif Display', sans-serif
+                weight: 400
+                size: 25px
+            line-height: 35px
+            letter-spacing: 0.5px
+            color: #292F36
+            margin: 15px 0 20px 0
+        .card__more
+            display: flex
+            align-items: center
+            justify-content: space-between
+            span
+                font:
+                    family: 'Jost', sans-serif
+                    weight: 400
+                    size: 16px
+                line-height: 24px
+                letter-spacing: 0.22px
+                color: #4D5053
+            .card__btn
+                width: 52px
+                height: 52px
+                border-radius: 50%
+                background-color: #F4F0EC
+                background-image: url("../img/icons/more.svg")
+                background-repeat: no-repeat
+                background-position: center
+
+// Стилизация connect START
+.connect
+    padding: 90px 40px
+    .textBx
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 100px 0
+        background: #292F36
+        border-radius: 70px
+        h2
+            @include title
+            color: #fff
+        p
+            @include text
+            color: #fff
+        .btn
+            background: #CDA274
+            img
+                filter: invert(1)
+// Стилизация connect END
+
+// Стилизация footer START
+.footer
+    padding: 50px 40px 100px 40px
+    .contentBx
+        display: flex
+        justify-content: space-between
+        .company
+            .company__text
+                @include text
+                max-width: 325px
+                margin: 15px 0 15px 0
+            .social i
+                font-size: 20px
+                margin-right: 40px
+                &:last-child
+                    margin-right: 0
+                &:hover
+                    color: #CDA274
+        .footer__nav
+            .nav__title
+                font-family: 'DM Serif Display'
+                font-weight: 400
+                font-size: 25px
+                line-height: 38px
+                letter-spacing: 0.22px
+                color: #292F36
+            .nav__item
+                margin-top: 30px
+                &:first-child
+                    margin-top: 21px
+                .nav__link
+                    @include text
+                    &:hover
+                        color: #cda274 
+                .address
+                    @include text
+                    max-width: 325px
+                    
+
+
+                
+// Стилизация footer END
+
+// Стилизация copyright START
+.copyright
+    text-align: center
+    padding: 35px 0
+    border-top: 1px solid #c2c2c2 
+    span
+        @include text
+        a
+            color: #CDA274
+// Стилизация copyright START
 
 
 // Адаптивная верстка.
@@ -112,10 +494,11 @@
     .nav
         position: fixed
         left: -100%
-        top: 95px
+        top: 94px
         display: block
         background: #fff
         width: 100%
+        padding: 50px 0
         z-index: 100
         transition: .3s
         &.activ
@@ -127,3 +510,75 @@
             .item
                 margin: 0
 
+    .banner
+        padding-top: 100px
+        padding-bottom: 100px
+        border-radius: 0
+        .textBx
+            margin: 0 auto
+            text-align: center
+    .about
+        .container
+            .about__section
+                padding: 0 15px
+    
+    .feature__section 
+        .imgBx 
+            margin-left: 10px
+            background-position: center
+            border-radius: 0
+        .feature__section 
+            .textBx 
+                h1
+                    font-size: 40px
+                    line-height: 50px
+    .count-project
+        .contantBx
+            .textBx
+                h1
+                    font-size: 65px
+
+
+@media (max-width : 720px)
+    .about
+        .container
+            flex-direction: column
+            .about__section
+                margin-bottom: 50px
+                &:last-child
+                    margin-bottom: 0
+
+    .feature__section 
+        .textBx
+            width: 100%
+        .imgBx 
+            width: 0
+            height: 0
+            background: none  
+
+    .brands
+        display: none   
+
+    .count-project
+        padding: 50px 40px
+        .contantBx
+            .textBx
+                border-right: none
+                width: 50%
+    
+@media (min-width : 320px) and (max-width : 500px)
+    .banner 
+        padding: 50px 20px 60px
+        .textBx 
+            h1
+                font-size: 50px
+                line-height: 70px
+    .about
+        padding: 60px 20px 60px
+
+    .count-project
+        padding: 40px 20px
+        .contantBx
+            .textBx
+                // border-right: none
+                width: 100%
